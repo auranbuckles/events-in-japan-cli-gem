@@ -1,6 +1,7 @@
 class TokyoEvents::CLI
 
 	def run
+		TokyoEvents::Scraper.new.scrape_and_create_events
 		list_events
 		choose_event
 	end
@@ -21,9 +22,10 @@ class TokyoEvents::CLI
 		puts ""
 		puts "Date(s): #{event.dates}"
 		puts "Location: #{event.location}"
-		puts "Description: #{event.description}"
 		puts "Link: #{event.url}"
 		puts ""
+		puts "------------ Description ------------"
+		puts "#{event.description}"
 	end
 
 	def goodbye
