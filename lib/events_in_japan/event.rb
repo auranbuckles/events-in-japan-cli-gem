@@ -1,0 +1,4 @@
+class EventsInJapan::Event
+
+
+end
