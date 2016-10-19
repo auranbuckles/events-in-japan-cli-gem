@@ -13,12 +13,20 @@ class TokyoEvents::CLI
 		TokyoEvents::Event.all.each.with_index(1) do |event, i|
 			puts "#{i}. #{event.name} - #{event.dates}"
 		end
+		puts ""
 		puts "========================================="
 		puts ""
 	end
 
 	def choose_event
-		puts "Which event would you like more info on?"
+		input = nil
+		while input != "exit"
+			puts ""
+			puts "Which event would you like to know more about? (enter an index number or 'exit' to end the program)"
+			puts ""
+			input = gets.strip
+		end
+		goodbye
 	end
 
 	def show_event(event)
