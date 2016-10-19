@@ -1,4 +1,4 @@
-class EventsInJapan::CLI
+class TokyoEvents::CLI
 
 	def run
 		list_events
@@ -7,7 +7,7 @@ class EventsInJapan::CLI
 
 	def list_events
 		puts "Upcoming events this month:"
-		EventsInJapan::Event.list_events
+		TokyoEvents::Event.list_events
 	end
 
 	def choose_event

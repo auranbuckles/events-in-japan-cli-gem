@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'pry'
 
-class EventsInJapan::Event
+class TokyoEvents::Event
 
 	attr_accessor :name, :dates, :location, :description, :url
 

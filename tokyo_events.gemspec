@@ -1,14 +1,14 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'events_in_japan/version'
+require 'tokyo_events/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "events_in_japan"
-  spec.version       = EventsInJapan::VERSION
+  spec.name          = "tokyo_events"
+  spec.version       = TokyoEvents::VERSION
   spec.authors       = ["Auran Buckles"]
 
-  spec.summary       = %q{This gem provides a CLI for users to find out information about upcoming events in Japan, including festivals, fashion shows, and sports events.}
+  spec.summary       = %q{This gem provides a CLI for users to find out information about upcoming events in Tokyo, including festivals, fashion shows, and food events.}
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
   # spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
