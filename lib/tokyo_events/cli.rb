@@ -31,7 +31,7 @@ class TokyoEvents::CLI
 			input = gets.strip
 			if input == "list"
 				list_events
-			elsif input.to_i != 0 && input != "exit"
+			elsif input.to_i == 0 && input != "exit"
 				if event = TokyoEvents::Event.find_by_name(input)
           show_event(event)
         end
