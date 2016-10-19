@@ -3,14 +3,18 @@ class TokyoEvents::CLI
 	def run
 		TokyoEvents::Scraper.new.scrape_and_create_events
 		list_events
-		# choose_event
+		choose_event
 	end
 
 	def list_events
-		puts "============ Upcoming events this month ============"
+		puts ""
+		puts "============ Upcoming events ============"
+		puts ""
 		TokyoEvents::Event.all.each.with_index(1) do |event, i|
 			puts "#{i}. #{event.name} - #{event.dates}"
 		end
+		puts "========================================="
+		puts ""
 	end
 
 	def choose_event
