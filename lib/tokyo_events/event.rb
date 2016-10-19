@@ -23,6 +23,15 @@ class TokyoEvents::Event
 		)
 	end
 
+	def location
+		location_string = doc.css("#tmp_info_detail tr:first-child td").text
+		@location ||= location_string.gsub("\n\n", "").gsub("\n", ", ").gsub(/,,|,\s,/, ",")
+	end
+
+	def description
+		@description ||= doc.css(".box_photo + p").text
+	end
+
 	def self.all
 		@@all
 	end
