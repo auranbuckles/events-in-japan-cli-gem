@@ -3,7 +3,7 @@ class TokyoEvents::CLI
 	def run
 		TokyoEvents::Scraper.new.scrape_and_create_events
 		list_events
-		choose_event
+		# choose_event
 	end
 
 	def list_events
