@@ -22,7 +22,11 @@ class TokyoEvents::CLI
 		input = nil
 		while input != "exit"
 			puts ""
-			puts "Which event would you like to know more about? (enter an index number or 'exit' to end the program)"
+			puts "Which event would you like to learn more about?"
+			puts ""
+			puts "Enter an index number to view details of a specific event."
+			puts "Enter list to see all the events again."
+			puts "Enter exit to exit the program."
 			puts ""
 			input = gets.strip
 		end
