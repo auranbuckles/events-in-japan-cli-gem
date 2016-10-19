@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/events_in_japan'
+
+EventsInJapan::CLI.new.run

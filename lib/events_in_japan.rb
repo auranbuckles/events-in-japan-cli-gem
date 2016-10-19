@@ -1,5 +1,8 @@
-require "events_in_japan/version"
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
 
-module EventsInJapan
-  # Your code goes here...
-end
+require_relative "./events_in_japan/version"
+require_relative './events_in_japan/cli'
+require_relative './events_in_japan/scraper'
+require_relative './events_in_japan/event'
