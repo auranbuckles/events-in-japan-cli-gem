@@ -9,15 +9,16 @@ class EventsInJapan::Event
 		doc = Nokogiri::HTML(open("https://www.gotokyo.org/eventlist/en/list"))
 
 		doc.css(".box_detail").map do |event|
-
-			event.name = event.css("a").text
 			event_url = "https://www.gotokyo.org" + event.css("a").attribute("href").value
-
-			
 			event_doc = Nokogiri::HTML(open(event_url))
-			event_doc.css("#tmp_wrap_main p")
+			location_string = event_doc.css("#tmp_info_detail tr:first-child td").text
+			{
+				name: event.css("a").text,
+				location: location_string.gsub("\n\n", "").gsub("\n", ", "),
+				description: event_doc.css(".box_photo + p").text,
+				url: "https://www.gotokyo.org" + event.css("a").attribute("href").value
+			}
 
-		binding.pry
 		end
 	end
 
@@ -26,7 +27,4 @@ class EventsInJapan::Event
 	end
 
 end
-
-# event.dates = event.css(".box_detail_ttl p").text
-
 
