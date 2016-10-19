@@ -6,8 +6,7 @@ require 'events_in_japan/version'
 Gem::Specification.new do |spec|
   spec.name          = "events_in_japan"
   spec.version       = EventsInJapan::VERSION
-  spec.authors       = ["auranbuckles"]
-  spec.email         = ["auran59@gmail.com"]
+  spec.authors       = ["Auran Buckles"]
 
   spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
