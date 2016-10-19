@@ -24,11 +24,22 @@ class TokyoEvents::CLI
 			puts ""
 			puts "Which event would you like to learn more about?"
 			puts ""
-			puts "Enter an index number to view details of a specific event."
+			puts "Enter an index number or event name to view details of a specific event."
 			puts "Enter list to see all the events again."
 			puts "Enter exit to exit the program."
 			puts ""
 			input = gets.strip
+			if input == "list"
+				list_events
+			elsif input.to_i != 0 && input != "exit"
+				if event = TokyoEvents::Event.find_by_name(input)
+          show_event(event)
+        end
+      elsif input.to_i > 0
+      	if event = TokyoEvents::Event.find(input.to_i)
+          show_event(event)
+        end
+			end
 		end
 		goodbye
 	end
@@ -41,7 +52,11 @@ class TokyoEvents::CLI
 		puts "Link: #{event.url}"
 		puts ""
 		puts "------------ Description ------------"
+		puts ""
 		puts "#{event.description}"
+		puts ""
+		puts "-------------------------------------"
+		puts ""
 	end
 
 	def goodbye
