@@ -1,6 +1,6 @@
 # Tokyo Events
 
-This gem provides a CLI for users to find out information about upcoming events in Tokyo, including festivals, fashion shows, and food fairs.
+This gem provides a CLI for users to find out information about current and upcoming events in Tokyo, including festivals, fashion shows, and food fairs.
 
 ## Installation
 

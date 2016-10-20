@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = TokyoEvents::VERSION
   spec.authors       = ["Auran Buckles"]
 
-  spec.summary       = %q{This gem provides a CLI for users to find out information about upcoming events in Tokyo, including festivals, fashion shows, and food events.}
+  spec.summary       = %q{This gem provides a CLI for users to find out information about current and upcoming events in Tokyo, including festivals, fashion shows, and food fairs.}
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
   # spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
