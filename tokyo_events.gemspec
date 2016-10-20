@@ -12,12 +12,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://rubygems.org/gems/tokyo-events"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib", "lib/tokyo_events"]
+  spec.files         = ["lib/tokyo_events.rb", "lib/tokyo_events/cli.rb", "lib/tokyo_events/scraper.rb", "lib/tokyo_events/event.rb"]
+  spec.executables   << 'tokyo-events'
 
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
