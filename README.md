@@ -7,7 +7,7 @@ This gem provides a CLI for users to find out information about current and upco
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'tokyo-events-cli-gem'
+gem 'tokyo-events'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install tokyo-events-cli-gem
+    $ gem install tokyo-events
 
 ## Usage
 
