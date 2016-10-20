@@ -24,7 +24,7 @@ class TokyoEvents::CLI
 			puts ""
 			puts "Which event would you like to learn more about?"
 			puts ""
-			puts "Enter an index number or event name to view details of a specific event."
+			puts "Enter an index number or keyword to view details of specific events."
 			puts "Enter list to see all the events again."
 			puts "Enter exit to exit the program."
 			puts ""
@@ -32,8 +32,13 @@ class TokyoEvents::CLI
 			if input == "list"
 				list_events
 			elsif input.to_i == 0 && input != "exit"
-				if event = TokyoEvents::Event.find_by_name(input)
-          show_event(event)
+				if results = TokyoEvents::Event.find_by_name(input)
+          results.each.with_index(1) do |event, i|
+          	puts ""
+		        puts "============================= Result #{i} ============================="
+		        puts ""
+		        show_event(event)
+		      end
         end
       elsif input.to_i > 0
       	if event = TokyoEvents::Event.find(input.to_i)

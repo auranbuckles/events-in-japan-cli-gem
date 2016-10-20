@@ -40,6 +40,12 @@ class TokyoEvents::Event
     self.all[id-1]
   end
 
+   def self.find_by_name(name)
+    self.all.select do |event|
+      event.name.downcase.strip.include?(name.downcase.strip)
+    end
+  end
+
 	def doc
 		@doc ||= Nokogiri::HTML(open(self.url))
 	end
