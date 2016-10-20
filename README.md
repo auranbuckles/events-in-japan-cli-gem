@@ -22,7 +22,7 @@ Or install it yourself as:
 
 Type the following into your command line interfact and follow the screen prompts.
 
-		$ tokyo-events
+$ tokyo-events
 
 ## Development
 
