@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require './lib/tokyo_events'
+require_relative '../lib/tokyo_events'
 
 TokyoEvents::CLI.new.run
