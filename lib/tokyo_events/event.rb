@@ -7,20 +7,20 @@ class TokyoEvents::Event
 
 	@@all = []
 
-	def initialize(name, dates, url)
-		@name = name
-		@dates = dates
-		@url = url
+	def initialize(params = {})
+		@name = params[:name]
+		@dates = params[:dates]
+		@url = params[:url]
 
 		@@all << self
 	end
 
 	def self.new_from_index_page(event)
-		self.new(
-			event.css("a").text,
-			event.css(".box_detail_ttl p").text,
-			"https://www.gotokyo.org" + event.css("a").attribute("href").value
-		)
+		self.new({
+			name: event.css("a").text,
+			dates: event.css(".box_detail_ttl p").text,
+			url: "https://www.gotokyo.org" + event.css("a").attribute("href").value
+		})
 	end
 
 	def location
@@ -37,7 +37,7 @@ class TokyoEvents::Event
 	end
 
 	def self.find(id)
-    self.all[id-1]
+    self.all[id]
   end
 
    def self.find_by_name(name)

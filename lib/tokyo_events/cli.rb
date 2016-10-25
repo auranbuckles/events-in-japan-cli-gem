@@ -1,7 +1,7 @@
 class TokyoEvents::CLI
 
 	def run
-		TokyoEvents::Scraper.new.scrape_and_create_events
+		TokyoEvents::Scraper.scrape_and_create_events
 		list_events
 		choose_event
 	end
@@ -41,7 +41,7 @@ class TokyoEvents::CLI
 		      end
         end
       elsif input.to_i > 0
-      	if event = TokyoEvents::Event.find(input.to_i)
+      	if event = TokyoEvents::Event.find(input.to_i - 1)
           show_event(event)
         end
 			end

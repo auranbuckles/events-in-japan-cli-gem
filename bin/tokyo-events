@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
+# ^^ the Shebang
 
 require_relative '../lib/tokyo_events'
 
 TokyoEvents::CLI.new.run
+
